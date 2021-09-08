@@ -1,19 +1,16 @@
 package guru.springframework.sfgdi.controllers;
 
 import guru.springframework.sfgdi.services.GreetingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
- * Created by HashmatN at 4:07 PM on Sep 08, 2021
+ * Created by HashmatN at 4:28 PM on Sep 08, 2021
  */
 @Controller
-public class SetterInjectedController {
+public class ConstructorInjectedController {
+  private final GreetingService greetingService;
 
-  private GreetingService greetingService;
-
-  @Autowired
-  public void setGreetingService(GreetingService greetingService) {
+  public ConstructorInjectedController(GreetingService greetingService) {
     this.greetingService = greetingService;
   }
 
